@@ -34,10 +34,11 @@ shinyUI(fluidPage(
       tags$div(
         HTML("<p> Instructions to use the app: </p> 
                   <ul>
+                    <li> 0. Search the variable ID in the variableID lookup table on the right</li>
                     <li> 1. Choose the x-axis variable in date & time format</li>
                     <li> 2. Click 'update' to get the available datetime range in the data using the selected x-variable </li>
                     <li> 3. Select date range using the date selector on top</li>
-                    <li> 4. Select multiple variables to visualize by typing or clicking (autofill enabled)</li>
+                    <li> 4. Select/Type multiple variables to visualize by typing or clicking (autofill enabled)</li>
                     <li> 5. Click 'update' to show the table and plot.</li>
                     <li> 6. You can also use the seach box to search variables after 'update'</li>
                   </ul>
@@ -50,6 +51,7 @@ shinyUI(fluidPage(
       img(src='logo.png',alt='IHS Markit', height=30, width=100,align = 'right'),
       tabsetPanel(
         tabPanel("Table",dataTableOutput("table")),
+        tabPanel("Variable ID Lookup", dataTableOutput("lookupTable")),
         tabPanel("Plot",plotOutput("plot"))
       )
     )

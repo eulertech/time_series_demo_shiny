@@ -2,10 +2,10 @@ name: time_series_viz
 title: time_series_viz
 account: euler-tech
 server: shinyapps.io
-appId: 167242
-bundleId: 764000
+appId: 168168
+bundleId: 768758
 url: https://euler-tech.shinyapps.io/time_series_viz/
-when: 1490546080.40345
+when: 1490800818.49742
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: server_v0.R|www/test.csv
+ignoredFiles: server_v0.R

@@ -29,7 +29,7 @@ shinyServer(function(input, output) {
       print("get selected variable from selectizeInput")
       selectedVars <- input$selectVar2PlotID
       if(length(selectedVars)<1) {
-        stop ("Please select at lease one variable!!")
+        #stop ("Please select at lease one variable!!")
       }
       # subset data using the date range and selected variables list
       data2use <- subset(data,date>=as.Date(as.character(input$dateRangeID[1])) 
@@ -65,9 +65,8 @@ shinyServer(function(input, output) {
         #  geom_line()
       ggplot(xymelt(), aes(x = date, y = value, color=variable)) + geom_line() +
         geom_point(data = xymelt(),aes(x = date, y = value, color=variable))
-        
-         
     })
    
    output$table <- renderDataTable(rv$data)
+   output$lookupTable <- renderDataTable(lookupData)
 })
